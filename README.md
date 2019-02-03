@@ -35,7 +35,7 @@ And copy it to /usr/local/bin (while renaming it to ftransfer):
 
 `cp ftransfer.py /usr/local/bin/ftransfer`
 
-If that fails, use: `sudo cp ftransfer /usr/local/bin/ftransfer` 
+If that fails, use: `sudo cp ftransfer.py /usr/local/bin/ftransfer` 
 
 If you are on Windows you will have to modify the first line of the `ftransfer.py` script to point to your Python 3 installation and use the Windows way of making a script executable and put in in your $Path.
 
