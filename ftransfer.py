@@ -25,6 +25,7 @@ import mimetypes
 import re
 from io import BytesIO
  
+import socket
  
 class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
  
@@ -290,6 +291,16 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
  
 def test(HandlerClass = SimpleHTTPRequestHandler,
          ServerClass = http.server.HTTPServer):
+    host_name = socket.gethostname()
+    host_ip = socket.gethostbyname(host_name)
+    host_ip = str(host_ip)
+    local_ip_address = "http://" + host_ip + ":8000/"
+    #local_ip_address = local_ip_address.join("")
+    local_ip_address = str(local_ip_address)
+    local_ip_address = local_ip_address.replace(" ","")
+    print("Press CTRL + C to stop\n")
+    print("Can be accessed from the local network via <<  ",local_ip_address,"  >>\n")
+    print("Local address:")
     http.server.test(HandlerClass, ServerClass)
  
 if __name__ == '__main__':
